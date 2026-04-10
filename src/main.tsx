@@ -1,7 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-import './index.css'
+import { syncRootThemeBeforeReact } from './lib/theme'
+import './tailwind.css'
+
+syncRootThemeBeforeReact()
 
 const rootEl = document.getElementById('root')
 if (!rootEl)

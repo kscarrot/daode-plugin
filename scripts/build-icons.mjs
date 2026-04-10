@@ -15,7 +15,7 @@ const sizes = [16, 32, 48, 128]
 for (const size of sizes) {
   const out = join(root, 'public/icons', `icon-${size}.png`)
   await sharp(svg, { density: 300 })
-    .resize(size, size, { fit: 'contain', background: { r: 250, g: 250, b: 249, alpha: 1 } })
+    .resize(size, size, { fit: 'contain', background: { r: 250, g: 250, b: 250, alpha: 1 } })
     .png()
     .toFile(out)
   console.info(out)

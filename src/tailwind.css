@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/**
+ * 暗黑：在 html.dark 下倒转 neutral 档位（与 Tailwind 默认 neutral 色值一致，便于单套 class）。
+ * 浅色档名在暗色下对应深色档的物理色，反之亦然。
+ */
+@layer base {
+  :root {
+    --palette-neutral-50: oklch(98.5% 0 0);
+    --palette-neutral-100: oklch(97% 0 0);
+    --palette-neutral-200: oklch(92.2% 0 0);
+    --palette-neutral-300: oklch(87% 0 0);
+    --palette-neutral-400: oklch(70.8% 0 0);
+    --palette-neutral-500: oklch(55.6% 0 0);
+    --palette-neutral-600: oklch(43.9% 0 0);
+    --palette-neutral-700: oklch(37.1% 0 0);
+    --palette-neutral-800: oklch(26.9% 0 0);
+    --palette-neutral-900: oklch(20.5% 0 0);
+    --palette-neutral-950: oklch(14.5% 0 0);
+  }
+
+  html.dark {
+    --color-neutral-50: var(--palette-neutral-950);
+    --color-neutral-100: var(--palette-neutral-900);
+    --color-neutral-200: var(--palette-neutral-800);
+    --color-neutral-300: var(--palette-neutral-700);
+    --color-neutral-400: var(--palette-neutral-600);
+    --color-neutral-500: var(--palette-neutral-500);
+    --color-neutral-600: var(--palette-neutral-400);
+    --color-neutral-700: var(--palette-neutral-300);
+    --color-neutral-800: var(--palette-neutral-200);
+    --color-neutral-900: var(--palette-neutral-100);
+    --color-neutral-950: var(--palette-neutral-50);
+  }
+}
